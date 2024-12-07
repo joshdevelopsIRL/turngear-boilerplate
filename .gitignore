@@ -6,8 +6,8 @@ activate
 .django/
 __pycache__/
 postgres_data/
+postgresql
 base_template/
-data/*
 *.pyo
 *.yml
 *.pyc
