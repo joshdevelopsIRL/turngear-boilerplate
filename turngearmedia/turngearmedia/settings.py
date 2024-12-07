@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 AUTH_USER_MODEL = "users.User"
 
@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / "data/templates/",
+            BASE_DIR / "templates/",
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -120,7 +120,7 @@ LOGGING = {
         "file": {
             "level": "DEBUG",
             "class": "logging.FileHandler",
-            "filename": "./data/logs/debug.log",
+            "filename": "./logs/debug.log",
         },
     },
     "loggers": {
@@ -147,12 +147,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "data/static/",
-    BASE_DIR / "data/media/",
+    BASE_DIR / "static/",
+    BASE_DIR / "media/",
 ]
 
 # MEDIA_ROOT = os.getenv("MEDIA_ROOT")

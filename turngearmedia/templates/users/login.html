@@ -1,0 +1,17 @@
+{% extends "../partials/layout.html" %}
+{% block title %}LOGIN PAGE YO{% endblock %}
+
+{% block content %}
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="username">Username</label>
+        <input type="text" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="password">Password</label>
+        <input type="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+</form>
+{% endblock %}

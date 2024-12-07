@@ -23,6 +23,7 @@ base_template/
 *.jpeg
 *.png
 scrubber
+node_modules
 
 **/migrations/*
 !**/migrations/__init__.py
