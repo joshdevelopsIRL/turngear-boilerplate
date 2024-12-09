@@ -2,16 +2,18 @@
 {% block title %}LOGIN PAGE YO{% endblock %}
 
 {% block content %}
-<form method="POST" action="">
-    {% csrf_token %}
-    <div class="mb-3">
-        <label for="username">Username</label>
-        <input class="py-2 px-4 rounded-lg bg-[#e1e1e1] focus:ring-black" type="text" name="username" required>
-    </div>
-    <div class="mb-3">
-        <label for="password">Password</label>
-        <input type="password" name="password" required>
-    </div>
-    <button type="submit">Login</button>
-</form>
+<div class="flex flex-col min-w-[400px] max-w-[800px]">
+  <form method="POST" action="" class="w-full">
+      {% csrf_token %}
+      <div class="mb-3 grid grid-cols-3 gap-4">
+          <label for="username" class="py-2 px-4 rounded-lg bg-primary text-white font-bold text-center">Username</label>
+          <input class="py-2 px-4 rounded-lg bg-[#e1e1e1] col-span-2" type="text" name="username" required>
+      </div>
+      <div class="mb-3 grid grid-cols-3 gap-4">
+          <label for="password" class="py-2 px-4 rounded-lg bg-primary text-white font-bold text-center">Password</label>
+          <input class="py-2 px-4 rounded-lg bg-[#e1e1e1] col-span-2" type="password" name="password" required>
+      </div>
+      <button type="submit" class="py-2 px-4 bg-[#fadfad]">Login</button>
+  </form>
+</div>
 {% endblock %}
