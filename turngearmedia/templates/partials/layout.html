@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome To Turngear Media{% endblock %} - turngearmedia.com</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://unpkg.com/htmx.org@2.0.3"></script>
   </head>
-  <body>
+  <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
     <header>
-      {% include "partials/navbar.html" %}
+      {% include "partials/topbar.html" %}
     </header>
-    <div class="w-full h-full min-h-[80vh] min-w-[100vw] flex flex-col mx-auto p-8 my-8 text-primary">
-    {% block content %}<p>Need Some Content Yo...</p>{% endblock %}
+    {% if user.is_authenticated %}
+      {% include "partials/sidebar.html" %}
+      <div class="w-full h-full min-h-[80vh] min-w-[100vw] flex flex-col mx-auto p-8 my-8 text-primary ml-16 mt-16">
+      {% else %}
+      <div class="w-full h-full min-h-[80vh] min-w-[100vw] flex flex-col mx-auto p-8 my-8 text-primary mt-16">
+    {% endif %}
+        <main id="root">
+          {% block content %}<p>Need Some Content Yo...</p>{% endblock %}
+        </main>
     </div>
   </body>
 </html>

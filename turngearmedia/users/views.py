@@ -32,5 +32,30 @@ def user_logout(request: HttpRequest) -> HttpResponse:
 
 
 @auth_required
-def test_login(request: HttpRequest) -> HttpResponse:
+def direct(request: HttpRequest) -> HttpResponse:
     return render(request, 'users/direct.html', {})
+
+
+@auth_required
+def hx_direct(request: HttpRequest) -> HttpResponse:
+    return render(request, 'users/hx_direct.html', {})
+
+
+@auth_required
+def profile(request: HttpRequest) -> HttpResponse:
+    return render(request, 'users/profile.html', {})
+
+
+@auth_required
+def hx_profile(request: HttpRequest) -> HttpResponse:
+    return render(request, 'users/hx_profile.html', {})
+
+
+@auth_required
+def hx_openprofilebar(request: HttpRequest) -> HttpResponse:
+    return render(request, 'partials/hx_openprofilebar.html', {})
+
+
+@auth_required
+def delete(request: HttpRequest) -> HttpResponse:
+    return render(request, 'partials/delete.html', {})
