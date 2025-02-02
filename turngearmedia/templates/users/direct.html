@@ -1,4 +1,5 @@
 {% extends "../partials/layout.html" %}
 {% block content %}
-{% include "users/hx_direct.html" %}
+<h1>Congrats! {{user.username}}!</h1>
+<h2>Now Go <a href="{% url 'logout' %}">Logout ({{user.username}})</a>!</h2>
 {% endblock %}
